@@ -1,39 +1,14 @@
 "use client";
 
-import Logo from "@/assets/logos/playful-logo.svg";
 import { Heart, Menu, Search, ShoppingCart, UserRound, X } from "lucide-react";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-} from "@/components/ui/sheet";
-import Image from "next/image";
-import Link from "next/link";
+import { Sheet, SheetClose, SheetContent } from "@/components/ui/sheet";
+import { logo, mobileLinks } from "@/constants/index";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Mobile() {
-  const links = [{
-    label: "Shop",
-    route: "/shop",
-    active: true
-  },
-  {
-    label: "Discover",
-    route: "/discover",
-    active: false
-  },
-  {
-    label: "Deals",
-    route: "/deals",
-    active: false
-  },
-  {
-    label: "Support",
-    route: "/support",
-    active: false
-  }];
-
   const [open, setOpen] = useState(false);
 
   return(
@@ -43,12 +18,12 @@ export default function Mobile() {
         <Link href="/" className="mobile-logo">
           <Image
             className="mobile-logo-image"
-            src={Logo}
+            src={logo.image}
             alt="Playful Logo"
             height={42}
             width={40}
           />
-          <h2 className="mobile-logo-title">playful</h2>
+          <h2 className="mobile-logo-title">{logo.title}</h2>
         </Link>
       </section>
 
@@ -75,12 +50,12 @@ export default function Mobile() {
                 <Link href="/" className="mobile-logo">
                   <Image
                     className="mobile-logo-image"
-                    src={Logo}
+                    src={logo.image}
                     alt="Playful Logo"
                     height={42}
                     width={40}
                   />
-                  <h2 className="mobile-logo-title">playful</h2>
+                  <h2 className="mobile-logo-title">{logo.title}</h2>
                 </Link>
 
                 {/* Exit */}
@@ -101,7 +76,7 @@ export default function Mobile() {
                 {/* Links */}
                 <nav className="mobile-menu-sheet-navigation">
                   {
-                    links.map((item) => {
+                    mobileLinks.map((item) => {
                       return(
                         <SheetClose key={item.route}>
                           <Link

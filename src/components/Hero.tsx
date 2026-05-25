@@ -1,17 +1,13 @@
 "use client";
 
+import { heroLabels } from "@/constants/index";
+import { mediaQueryHandler } from "@/lib/utils";
 import HeroSection from "@/assets/images/hero-section.webp";
 import HeroSectionMobile from "@/assets/images/hero-section-mobile.webp";
 import Image from "next/image";
-import { mediaQueryHandler } from "@/lib/utils";
 
 export default function Hero() {
   const isMobile = mediaQueryHandler(`(max-width: 768px)`);
-  const labels = {
-    subtitle: "Pro X2",
-    title: "SUPERSTRIKE",
-    button: "Shop"
-  }
 
   return(
     <section>
@@ -28,13 +24,13 @@ export default function Hero() {
           <div className="hero-cta">
             <div className="hero-cta-labels">
                 <h3 className="hero-cta-subtitle">
-                  {labels.subtitle}
+                  {heroLabels.subtitle}
                 </h3>
                 <h1 className="hero-cta-title">
-                  {labels.title}
+                  {heroLabels.title}
                 </h1>
                 <button className="hero-cta-button">
-                  {labels.button}
+                  {heroLabels.button}
                 </button>
             </div>
           </div>
@@ -54,13 +50,13 @@ export default function Hero() {
           <div className="hero-cta">
             <div className="hero-cta-labels">
                 <h3 className="hero-cta-subtitle">
-                  {labels.subtitle}
+                  {heroLabels.subtitle}
                 </h3>
                 <h1 className="hero-cta-title">
-                  {labels.title}
+                  {heroLabels.title}
                 </h1>
                 <button className="hero-cta-button">
-                  {labels.button}
+                  {heroLabels.button}
                 </button>
             </div>
           </div>

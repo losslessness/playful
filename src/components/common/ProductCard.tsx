@@ -1,12 +1,15 @@
 import { Heart, ShoppingCart } from "lucide-react";
+import { saleLabel } from "@/constants/index";
 import Image from "next/image";
 
-export default function ProductCard({image, brand, model}: ProductProps) {
+export default function ProductCard({sale, image, brand, model, pricing, discount}: ProductProps) {
   return (
     <main className="product-card">
       {/* Header */}      
       <div className="product-card-header">
-        <p className="product-card-header-sale">SALE</p>
+        <p className={(sale && discount) ? "product-card-header-sale" : "product-card-header-no-sale"}>
+          {saleLabel}
+        </p>
         <button><Heart className="product-card-header-favorite"/></button>
       </div>
       {/* Main */}
@@ -24,8 +27,13 @@ export default function ProductCard({image, brand, model}: ProductProps) {
       {/* Footer */}
       <div className="product-card-footer">
         <div className="product-card-footer-pricing">
-          <p className="product-card-footer-pricing-normal">159,99€</p>
-          <p className="product-card-footer-pricing-original">179,99€</p>
+          {(sale && discount) ?
+            <p className="product-card-footer-pricing-normal">{(sale && discount) && (pricing - discount)}€</p> :
+            <p className="product-card-footer-pricing-normal">{pricing}€</p>
+          }
+          {(sale && discount) &&
+            <p className="product-card-footer-pricing-original">{pricing}€</p>
+          }
         </div>
         <button><ShoppingCart className="product-card-footer-cart"/></button>
       </div>

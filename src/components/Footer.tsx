@@ -1,77 +1,21 @@
-import Logo from "@/assets/logos/playful-logo.svg";
+import { logo,
+  playfulTitle,
+  playfulLinks,
+  informationTitle,
+  informationLinks,
+  supportTitle,
+  supportLinks,
+  copyrightText
+} from "@/constants/index";
 import Facebook from "@/assets/logos/facebook-logo.svg";
 import Instagram from "@/assets/logos/instagram-logo.svg";
+import Logo from "@/assets/logos/playful-logo.svg";
 import X from "@/assets/logos/x-logo.svg";
+import FooterList from "@/components/common/FooterList";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
-  const playfulLinks = [
-    {
-      label: "About",
-      route: "/about",
-    },
-    {
-      label: "Careers",
-      route: "/careers",
-    },
-    {
-      label: "Investors",
-      route: "/investors",
-    },
-    {
-      label: "Press",
-      route: "/press",
-    },
-    {
-      label: "Sustainability",
-      route: "/sustainability",
-    }
-  ];
-  const informationLinks = [
-    {
-      label: "Terms of Use",
-      route: "/terms-of-use",
-    },
-    {
-      label: "Privacy Policy",
-      route: "/privacy-policy",
-    },
-    {
-      label: "Cookie Settings",
-      route: "/cookie-settings",
-    },
-    {
-      label: "Payment Methods",
-      route: "/payment-methods",
-    },
-    {
-      label: "Shipping Details",
-      route: "/shipping-details",
-    }
-  ];
-  const supportLinks = [
-    {
-      label: "FAQ",
-      route: "/faq"
-    },
-    {
-      label: "Return Policy",
-      route: "/return-policy"
-    },
-    {
-      label: "Help Center",
-      route: "/help-center"
-    },
-    {
-      label: "Suggestions",
-      route: "/suggestions"
-    },
-    {
-      label: "Contact Us",
-      route: "/contact-us"
-    }
-  ];
   const date = new Date();
 
   return (
@@ -82,14 +26,14 @@ export default function Footer() {
               <Link href="/" className="footer-content-branding-logo-container">
                 <Image
                   className="footer-content-branding-logo-image"
-                  src={Logo}
+                  src={logo.image}
                   alt="Playful Logo"
                   height={42}
                   width={32}
                 />
-                <h2 className="footer-content-branding-logo-title">playful</h2>
+                <h2 className="footer-content-branding-logo-title">{logo.title}</h2>
               </Link>
-            <p className="footer-content-branding-logo-slogan">For those aiming for the top.</p>
+            <p className="footer-content-branding-logo-slogan">{logo.slogan}</p>
           </div>
           <div className="footer-content-branding-socials">
             <Link href="/" className="footer-content-branding-socials-logo">
@@ -122,52 +66,13 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-content-links">
-          <div className="footer-content-links-section">
-            <h4 className="footer-content-links-section-title">Playful</h4>
-            <div className="footer-content-links-section-items">
-              {
-                playfulLinks.map((item) => {
-                  return(
-                    <Link href={item.route} key={item.label}>
-                      <p className="footer-content-links-section-item">{item.label}</p>
-                    </Link>
-                  );
-                }) 
-              }
-            </div>
-          </div>
-          <div className="footer-content-links-section">
-            <h4 className="footer-content-links-section-title">Information</h4>
-            <div className="footer-content-links-section-items">
-              {
-                informationLinks.map((item) => {
-                  return(
-                    <Link href={item.route} key={item.label}>
-                      <p className="footer-content-links-section-item">{item.label}</p>
-                    </Link>
-                  );
-                }) 
-              }
-            </div>
-          </div>
-          <div className="footer-content-links-section">
-            <h4 className="footer-content-links-section-title">Support</h4>
-            <div className="footer-content-links-section-items">
-              {
-                supportLinks.map((item) => {
-                  return(
-                    <Link href={item.route} key={item.label}>
-                      <p className="footer-content-links-section-item">{item.label}</p>
-                    </Link>
-                  );
-                }) 
-              }
-            </div>
-          </div>
+          <FooterList title={playfulTitle} links={playfulLinks} />
+          <FooterList title={informationTitle} links={informationLinks} />
+          <FooterList title={supportTitle} links={supportLinks} />
         </div>
       </div>
       <div className="copyright">
-        <p className="copyright-text">&copy; {date.getFullYear()} Playful. No rights reserved.</p>
+        <p className="copyright-text">&copy; {date.getFullYear()} {copyrightText}</p>
       </div>
     </main>
   );
