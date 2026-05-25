@@ -20,126 +20,411 @@ body {
   padding: 0;
 }
 
+@theme {
+  --text-14: 0.875rem;
+  --text-16: 1rem;
+  --text-18: 1.125rem;
+  --text-20: 1.25rem;
+  --text-26: 1.625rem;
+}
+
 @theme inline {
-  --font-heading: var(--font-sans);
-  --font-sans: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --color-foreground: var(--foreground);
   --color-background: var(--background);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  --color-foreground: var(--foreground);
+  --font-poppins: var(--font-poppins);
+  --font-inter: var(--font-inter);
 }
 
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer utilities {
+  .text-14 {
+    @apply leading-5.75;
+  }
+
+  .text-16 {
+    @apply leading-6;
+  }
+
+  .text-18 {
+    @apply leading-6.25;
+  }
+
+  .text-20 {
+    @apply leading-6.5;
+  }
+
+  .text-26 {
+    @apply leading-7.25;
+  }
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
+
+  /* Root */
+
+  .root {
+    @apply flex flex-col min-h-full font-inter;
   }
+
+  /* Navigation */
+
+  .navigation {
+    @apply flex items-center justify-between px-16 py-8 gap-20 max-xl:hidden;
+  }
+
+    /* Logo */
+
+    .navigation-logo {
+      @apply flex items-center h-10.5 gap-6;
+    }
+
+    .navigation-logo-image {
+      @apply h-10.5 size-8;
+    }
+
+    .navigation-logo-title {
+      @apply text-26 text-black font-poppins;
+    }
+
+    /* Links */
+
+    .navigation-links {
+      @apply flex flex-wrap flex-1 items-center h-10.5 gap-10;
+    }
+
+    .navigation-links-list {
+      @apply flex gap-14;
+    }
+
+    .navigation-links-item {
+      @apply text-gray-600 hover:text-black;
+    }
+
+    /* Search */
+
+    .navigation-search {
+      @apply flex items-center h-10.5 pl-4 overflow-hidden border rounded-3xl;
+    }
+
+    .navigation-search-icon {
+      @apply hover:cursor-pointer;
+    }
+
+    .navigation-search-bar {
+      @apply px-4 py-2 placeholder-gray-600 outline-none;
+    }
+
+    /* Icons */
+
+    .navigation-icons {
+      @apply flex flex-wrap items-center h-10.5 gap-4;
+    }
+
+    .navigation-icons-list {
+      @apply flex gap-8;
+    }
+
+    .navigation-icons-item {
+      @apply cursor-pointer hover:fill-black;
+    }
+
+  /* Mobile */
+
+  .mobile {
+    @apply flex items-center justify-between px-16 py-8 gap-20 xl:hidden;
+  }
+
+    /* Logo */
+
+    .mobile-logo {
+      @apply flex gap-6 focus:outline-none;
+    }
+
+    .mobile-logo-image {
+      @apply h-10.5 size-10;
+    }
+
+    .mobile-logo-title {
+      @apply text-[2.03125rem] text-black font-poppins max-md:hidden;
+    }
+
+    /* Menu */
+
+    .mobile-menu {
+      @apply flex flex-wrap items-center h-10.5 xl:hidden;
+    }
+
+    .mobile-menu-icons {
+      @apply flex flex-wrap items-center h-10.5 gap-4;
+    }
+
+    .mobile-menu-icons-list {
+      @apply flex gap-8;
+    }
+
+    .mobile-menu-icons-item {
+      @apply cursor-pointer hover:fill-black;
+    }
+
+    /* Sheet */
+
+    .mobile-menu-sheet {
+      @apply min-w-full px-16 py-8 bg-white border-none;
+    }
+
+    .mobile-menu-sheet-container {
+      @apply flex items-center justify-between;
+    }
+
+    .mobile-menu-sheet-content {
+      @apply flex flex-col justify-between h-[calc(100vh-4.5rem)] py-16 overflow-y-auto;
+    }
+
+    .mobile-menu-sheet-navigation {
+      @apply flex flex-col h-full gap-6 py-16 text-white;
+    }
+
+    .mobile-menu-sheet-link {
+      @apply flex items-center w-full gap-3 p-4 rounded-lg;
+    }
+
+    .mobile-menu-sheet-link-label {
+      @apply text-16 font-semibold text-black;
+    }
+
+  /* Hero */
+  
+  .hero {
+    @apply relative text-center;
+  }
+
+    /* Image */
+    
+    .hero-image-desktop {
+      @apply flex h-200 w-full items-center bg-center bg-cover max-md:hidden;
+    }
+
+    .hero-image-mobile {
+      @apply flex h-200 w-full items-center bg-center bg-cover md:hidden;
+    }
+
+    /* CTA */
+
+    .hero-cta {
+      @apply absolute top-0 right-0 bottom-0 left-0;
+    }
+
+    .hero-cta-labels {
+      @apply flex flex-col items-center py-12 gap-3 z-10 text-center;
+    }
+
+    .hero-cta-subtitle {
+      @apply text-2xl text-white;
+    }
+
+    .hero-cta-title {
+      @apply font-bold text-6xl text-center text-white;
+    }
+
+    .hero-cta-button {
+      @apply h-12 w-44 mt-5 text-white border border-white rounded-3xl cursor-pointer hover:text-black hover:bg-white;
+    }
+  
+  /* Categories */
+
+  .categories {
+    @apply flex flex-col items-center h-fit w-full p-12 gap-8;
+  }
+
+  .categories-title {
+    @apply font-bold text-4xl;
+  }
+
+  .categories-list {
+    @apply flex flex-wrap w-full justify-center;
+  }
+
+    /* Card */
+
+    .category-card {
+      @apply flex flex-col items-center mx-6 p-4 gap-4 cursor-pointer hover:[&>div]:scale-105;
+    }
+
+    .category-card-image {
+      @apply p-8 bg-gray-200 bg-center bg-cover border border-none rounded-[100px];
+    }
+
+    .category-card-title {
+      @apply text-20;
+    }
+
+  /* Products */
+
+  .products {
+    @apply flex flex-col items-center h-fit w-full px-5 py-12 gap-8 bg-gray-200 max-md:px-16;
+  }
+
+  .products-title {
+    @apply pb-4 font-bold text-4xl;
+  }
+
+  .products-list {
+    @apply flex w-full justify-center;
+  }
+
+    /* Carousel */
+
+    .products-list-carousel {
+      @apply w-full max-w-[90%];
+    }
+
+    .products-list-carousel-sizing {
+      @apply md:basis-1/3;
+    }
+
+    .products-list-carousel-button {
+      @apply border-none cursor-pointer;
+    }
+
+    /* Card */
+
+    .product-card {
+      @apply flex flex-col mx-6 p-8 gap-4 bg-white bg-center bg-cover border border-none rounded-2xl;
+    }
+
+    .product-card-header {
+      @apply flex justify-between;
+    }
+
+    .product-card-header-sale {
+      @apply py-1 px-3 text-14 text-green-600 font-bold bg-gray-200 rounded-xl;
+    }
+
+    .product-card-header-favorite {
+      @apply cursor-pointer hover:fill-black;
+    }
+
+    .product-card-main-image {
+      @apply items-center cursor-pointer h-auto w-auto hover:scale-105;
+    }
+    
+    .product-card-main-title-brand {
+      @apply text-14 text-gray-600 font-bold pb-1;
+    }
+
+    .product-card-main-title-model {
+      @apply text-18 font-bold;
+    }
+
+    .product-card-footer {
+      @apply flex justify-between;
+    }
+
+    .product-card-footer-pricing {
+      @apply flex flex-row gap-2;
+    }
+
+    .product-card-footer-pricing-normal {
+      @apply text-16 text-gray-800 font-bold;
+    }
+
+    .product-card-footer-pricing-original {
+      @apply text-16 line-through text-gray-600;
+    }
+
+    .product-card-footer-cart {
+      @apply size-5 cursor-pointer hover:fill-black;
+    }
+
+  /* Footer */
+  
+  .footer {
+    @apply flex flex-col;
+  }
+
+  .footer-content {
+    @apply flex justify-between py-12 px-16 max-md:flex-col;
+  }
+
+    /* Branding */
+
+    .footer-content-branding {
+      @apply flex flex-col justify-between gap-8;
+    }
+
+      /* Logo */
+
+      .footer-content-branding-logo {
+        @apply flex flex-col gap-2;
+      }
+
+      .footer-content-branding-logo-container {
+        @apply flex flex-row items-center gap-6;
+      }
+
+      .footer-content-branding-logo-image {
+        @apply h-10.5 size-8;
+      }
+
+      .footer-content-branding-logo-title {
+        @apply text-26 text-black font-poppins;
+      }
+
+      .footer-content-branding-logo-slogan {
+        @apply text-gray-600;
+      }
+
+      /* Socials */
+
+      .footer-content-branding-socials {
+        @apply flex flex-row items-center gap-4;
+      }
+
+      .footer-content-branding-socials-logo {
+        @apply flex items-center h-10.5 gap-6 hover:cursor-not-allowed;
+      }
+    
+    /* Links */
+
+    .footer-content-links {
+      @apply flex justify-evenly gap-20 max-md:flex-col max-md:pt-12 max-md:gap-10;
+    }
+
+    .footer-content-links-section {
+      @apply flex flex-col gap-4;
+    }
+
+    .footer-content-links-section-title {
+      @apply font-semibold text-18;
+    }
+
+    .footer-content-links-section-items {
+      @apply flex flex-col flex-wrap max-w-30 gap-1 text-14 text-gray-600;
+    }
+
+    .footer-content-links-section-item {
+      @apply hover:text-black hover:cursor-pointer;
+    }
+
+    /* Copyright */
+
+    .copyright {
+      @apply w-full p-1 bg-black text-white;
+    }
+
+    .copyright-text {
+      @apply text-center text-14;
+    }
 }
