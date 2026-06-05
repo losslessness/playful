@@ -1,4 +1,4 @@
-import { productsTitle, productLinks } from "@/constants/index";
+import { productsTitle, products } from "@/constants/index";
 import {
   Carousel,
   CarouselContent,
@@ -17,16 +17,16 @@ export default function Products() {
           <Carousel className="products-list-carousel">
             <CarouselContent>
               {
-                productLinks.map((item) => {
+                products.map((item) => {
                   return (
-                    <CarouselItem className="md:basis-1/4" key={item.model}>
+                    <CarouselItem className="md:basis-1/4" key={item?.id}>
                       <ProductCard
-                        sale={item.sale}
-                        image={item.image}
-                        brand={item.brand}
-                        model={item.model}
-                        pricing={item.pricing}
-                        discount={item.discount}
+                        sale={item?.sale}
+                        image={item?.image[0]}
+                        brand={item?.brand}
+                        model={item?.model}
+                        price={item?.price}
+                        discount={item?.discount}
                       />
                     </CarouselItem>
                   );

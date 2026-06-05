@@ -1,9 +1,15 @@
+"use client";
+
+import { cn } from "@/lib/utils";
 import { logo, navigationLinks, searchText } from "@/constants/index";
+import { usePathname } from "next/navigation";
 import { Heart, Search, ShoppingCart, UserRound } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Navigation() {
+  const pathname = usePathname();
+
   return(
     <nav className="navigation">
       {/* Logo */}
@@ -26,9 +32,15 @@ export default function Navigation() {
               <div className="navigation-links-list">
                 {
                   navigationLinks.map((item) => {
+                    const activePage = pathname === item?.route || pathname.startsWith(`${item?.route}`);
+
                     return(
-                        <Link href={item.route} key={item.label} className="navigation-links-item">
-                          {item.label}
+                        <Link
+                          href={item?.route}
+                          key={item?.label}
+                          className={cn("navigation-links-item", {"navigation-links-item-active": activePage})}
+                        >
+                          {item?.label}
                         </Link>
                     );
                   })
@@ -40,7 +52,7 @@ export default function Navigation() {
       {/* Search */}
       <section>
         <div className="navigation-search">
-            <Search className="navigation-search-icon" />
+          <Search className="navigation-search-icon" />
           <input type="text" className="navigation-search-bar" placeholder={searchText}/>
         </div>
       </section>

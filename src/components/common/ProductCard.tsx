@@ -2,7 +2,7 @@ import { Heart, ShoppingCart } from "lucide-react";
 import { saleLabel } from "@/constants/index";
 import Image from "next/image";
 
-export default function ProductCard({sale, image, brand, model, pricing, discount}: ProductProps) {
+export default function ProductCard({sale, image, brand, model, price, discount}: ProductCardProps) {
   return (
     <main className="product-card">
       {/* Header */}      
@@ -28,11 +28,11 @@ export default function ProductCard({sale, image, brand, model, pricing, discoun
       <div className="product-card-footer">
         <div className="product-card-footer-pricing">
           {(sale && discount) ?
-            <p className="product-card-footer-pricing-normal">{(sale && discount) && (pricing - discount)}€</p> :
-            <p className="product-card-footer-pricing-normal">{pricing}€</p>
+            <p className="product-card-footer-pricing-normal">{(sale && discount) && (price - discount)}€</p> :
+            <p className="product-card-footer-pricing-normal">{price}€</p>
           }
           {(sale && discount) &&
-            <p className="product-card-footer-pricing-original">{pricing}€</p>
+            <p className="product-card-footer-pricing-original">{price}€</p>
           }
         </div>
         <button><ShoppingCart className="product-card-footer-cart"/></button>

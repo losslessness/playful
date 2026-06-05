@@ -1,15 +1,17 @@
 "use client";
 
+import { cn } from "@/lib/utils";
+import { logo, mobileLinks } from "@/constants/index";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { Heart, Menu, Search, ShoppingCart, UserRound, X } from "lucide-react";
 import { Sheet, SheetClose, SheetContent } from "@/components/ui/sheet";
-import { logo, mobileLinks } from "@/constants/index";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Mobile() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return(
     <nav className="mobile">
@@ -47,16 +49,18 @@ export default function Mobile() {
             <SheetContent className="mobile-menu-sheet" side="right" showCloseButton={false} >  
               <div className="mobile-menu-sheet-container">
                 {/* Logo */}
-                <Link href="/" className="mobile-logo">
-                  <Image
-                    className="mobile-logo-image"
-                    src={logo.image}
-                    alt="Playful Logo"
-                    height={42}
-                    width={40}
-                  />
-                  <h2 className="mobile-logo-title">{logo.title}</h2>
-                </Link>
+                <SheetClose>
+                  <Link href="/" className="mobile-logo">
+                    <Image
+                      className="mobile-logo-image"
+                      src={logo.image}
+                      alt="Playful Logo"
+                      height={42}
+                      width={40}
+                    />
+                    <h2 className="mobile-logo-title">{logo.title}</h2>
+                  </Link>
+                </SheetClose>
 
                 {/* Exit */}
                 <SheetClose>
@@ -77,14 +81,16 @@ export default function Mobile() {
                 <nav className="mobile-menu-sheet-navigation">
                   {
                     mobileLinks.map((item) => {
+                      const activePage = pathname === item?.route || pathname.startsWith(`${item?.route}`);
+
                       return(
-                        <SheetClose key={item.route}>
+                        <SheetClose key={item?.route}>
                           <Link
-                            href={item.route}
+                            href={item?.route}
                             key={item.label}
-                            className={cn("mobile-menu-sheet-link", {"bg-black": item.active})}
+                            className={cn("mobile-menu-sheet-link", {"bg-black": activePage})}
                           >
-                            <p className={cn("mobile-menu-sheet-link-label", {"text-white": item.active})}>{item.label}</p>
+                            <p className={cn("mobile-menu-sheet-link-label", {"text-white": activePage})}>{item?.label}</p>
                           </Link>
                         </SheetClose>
                       );

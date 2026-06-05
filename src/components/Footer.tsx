@@ -1,4 +1,5 @@
-import { logo,
+import {
+  logo,
   playfulTitle,
   playfulLinks,
   informationTitle,
@@ -9,9 +10,8 @@ import { logo,
 } from "@/constants/index";
 import Facebook from "@/assets/logos/facebook-logo.svg";
 import Instagram from "@/assets/logos/instagram-logo.svg";
-import Logo from "@/assets/logos/playful-logo.svg";
 import X from "@/assets/logos/x-logo.svg";
-import FooterList from "@/components/common/FooterList";
+import FooterList from "@/components/common/LinkList";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -36,7 +36,7 @@ export default function Footer() {
             <p className="footer-content-branding-logo-slogan">{logo.slogan}</p>
           </div>
           <div className="footer-content-branding-socials">
-            <Link href="/" className="footer-content-branding-socials-logo">
+            <Link href="#" className="footer-content-branding-socials-logo">
               <Image
                 className="size-6"
                 src={Facebook}
@@ -45,7 +45,7 @@ export default function Footer() {
                 width={24}
               />
             </Link>
-            <Link href="/" className="footer-content-branding-socials-logo">
+            <Link href="#" className="footer-content-branding-socials-logo">
               <Image
                 className="size-6"
                 src={Instagram}
@@ -54,7 +54,7 @@ export default function Footer() {
                 width={24}
               />
             </Link>
-            <Link href="/" className="footer-content-branding-socials-logo">
+            <Link href="#" className="footer-content-branding-socials-logo">
               <Image
                 className="size-5"
                 src={X}
