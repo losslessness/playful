@@ -112,7 +112,7 @@ import ProductImage from "@/assets/images/product-image.webp";
     color: "White",
     price: 179.99,
     sale: false,
-    discount: 0 
+    discount: 0
   },
   {
     id: 3,
@@ -123,7 +123,7 @@ import ProductImage from "@/assets/images/product-image.webp";
     color: "White",
     price: 179.99,
     sale: true,
-    discount: 20 
+    discount: 40
   },
   {
     id: 4,
@@ -133,8 +133,8 @@ import ProductImage from "@/assets/images/product-image.webp";
     model: "Pro X2 Superstrike",
     color: "White",
     price: 179.99,
-    sale: true,
-    discount: 20 
+    sale: false,
+    discount: 0
   },
   {
     id: 5,
@@ -144,8 +144,8 @@ import ProductImage from "@/assets/images/product-image.webp";
     model: "Pro X2 Superstrike",
     color: "White",
     price: 179.99,
-    sale: true,
-    discount: 20 
+    sale: false,
+    discount: 0 
   },
   {
     id: 6,
@@ -156,7 +156,7 @@ import ProductImage from "@/assets/images/product-image.webp";
     color: "White",
     price: 179.99,
     sale: true,
-    discount: 20 
+    discount: 60 
   },
   {
     id: 7,
@@ -167,7 +167,7 @@ import ProductImage from "@/assets/images/product-image.webp";
     color: "White",
     price: 179.99,
     sale: true,
-    discount: 20 
+    discount: 80 
   },
   {
     id: 8,
@@ -177,8 +177,8 @@ import ProductImage from "@/assets/images/product-image.webp";
     model: "Pro X2 Superstrike",
     color: "White",
     price: 179.99,
-    sale: true,
-    discount: 20 
+    sale: false,
+    discount: 0
   }];
 
   export const saleLabel = "SALE";

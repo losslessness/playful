@@ -1,10 +1,3 @@
-declare namespace React {
-  function useCallback<T extends (...args: unknown[]) => unknown> (
-    callback: T,
-    deps: readonly unknown[]
-  ): T;
-}
-
 declare interface Logo {
   image: StaticImageData;
   title: string;
@@ -56,6 +49,6 @@ declare interface ProductCardProps {
   brand: string;
   model: string;
   price: number;
-  sale?: boolean;
-  discount?: number;
+  sale: boolean;
+  discount: number;
 }

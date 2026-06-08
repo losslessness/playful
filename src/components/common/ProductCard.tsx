@@ -3,11 +3,13 @@ import { saleLabel } from "@/constants/index";
 import Image from "next/image";
 
 export default function ProductCard({sale, image, brand, model, price, discount}: ProductCardProps) {
+  const saleValidation = sale && (discount < price) && (discount > 0);
+
   return (
     <main className="product-card">
       {/* Header */}      
       <div className="product-card-header">
-        <p className={(sale && discount) ? "product-card-header-sale" : "product-card-header-no-sale"}>
+        <p className={saleValidation ? "product-card-header-sale" : "product-card-header-no-sale"}>
           {saleLabel}
         </p>
         <button><Heart className="product-card-header-favorite"/></button>
@@ -27,12 +29,12 @@ export default function ProductCard({sale, image, brand, model, price, discount}
       {/* Footer */}
       <div className="product-card-footer">
         <div className="product-card-footer-pricing">
-          {(sale && discount) ?
-            <p className="product-card-footer-pricing-normal">{(sale && discount) && (price - discount)}€</p> :
-            <p className="product-card-footer-pricing-normal">{price}€</p>
+          {saleValidation ?
+            <p className="product-card-footer-pricing-normal">{saleValidation && (price - discount).toFixed(2)}€</p> :
+            <p className="product-card-footer-pricing-normal">{price.toFixed(2)}€</p>
           }
-          {(sale && discount) &&
-            <p className="product-card-footer-pricing-original">{price}€</p>
+          {saleValidation &&
+            <p className="product-card-footer-pricing-original">{price.toFixed(2)}€</p>
           }
         </div>
         <button><ShoppingCart className="product-card-footer-cart"/></button>

@@ -11,7 +11,7 @@ import {
 import Facebook from "@/assets/logos/facebook-logo.svg";
 import Instagram from "@/assets/logos/instagram-logo.svg";
 import X from "@/assets/logos/x-logo.svg";
-import FooterList from "@/components/common/LinkList";
+import FooterList from "@/components/common/FooterList";
 import Image from "next/image";
 import Link from "next/link";
 

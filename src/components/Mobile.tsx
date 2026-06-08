@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn, mediaQueryHandler } from "@/lib/utils";
 import { logo, mobileLinks } from "@/constants/index";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -12,9 +12,10 @@ import Link from "next/link";
 export default function Mobile() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const isMobile = mediaQueryHandler(`(max-width: 768px)`);
 
   return(
-    <nav className="mobile">
+    <nav className={!open ? "mobile" : "mobile-backdrop"}>
       {/* Logo */}
       <section>
         <Link href="/" className="mobile-logo">
@@ -45,7 +46,7 @@ export default function Mobile() {
 
         {/* Sheet */}
         {open && (
-          <Sheet open={open} onOpenChange={setOpen}>
+          <Sheet open={isMobile && open} onOpenChange={setOpen}>
             <SheetContent className="mobile-menu-sheet" side="right" showCloseButton={false} >  
               <div className="mobile-menu-sheet-container">
                 {/* Logo */}
@@ -64,7 +65,7 @@ export default function Mobile() {
 
                 {/* Exit */}
                 <SheetClose>
-                  <X className="mobile-menu-item"/>
+                  <X className="mobile-menu-exit-item"/>
                 </SheetClose>
               </div>
 
