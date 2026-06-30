@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function Mobile() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const isMobile = mediaQueryHandler(`(max-width: 768px)`);
+  const isMobile = mediaQueryHandler(`(max-width: 1280px)`);
 
   return(
     <nav className={!open ? "mobile" : "mobile-backdrop"}>
@@ -39,7 +39,7 @@ export default function Mobile() {
                 <li><button><Heart className="mobile-menu-icons-item"/></button></li>
                 <li><button><UserRound className="mobile-menu-icons-item"/></button></li>
                 <li><button><ShoppingCart className="mobile-menu-icons-item"/></button></li>
-                <li><button><Menu className="mobile-menu-icons-item" onClick={() => setOpen(true)}/></button></li>
+                <li><button><Menu className="mobile-menu-icons-open" onClick={() => setOpen(true)}/></button></li>
               </ul>
             </div>
           </section>
@@ -47,7 +47,7 @@ export default function Mobile() {
         {/* Sheet */}
         {open && (
           <Sheet open={isMobile && open} onOpenChange={setOpen}>
-            <SheetContent className="mobile-menu-sheet" side="right" showCloseButton={false} >  
+            <SheetContent className="mobile-menu-sheet" side="right" showCloseButton={false}>  
               <div className="mobile-menu-sheet-container">
                 {/* Logo */}
                 <SheetClose>
@@ -81,19 +81,39 @@ export default function Mobile() {
                 {/* Links */}
                 <nav className="mobile-menu-sheet-navigation">
                   {
-                    mobileLinks.map((item) => {
+                    mobileLinks.map((item, index) => {
                       const activePage = pathname === item?.route || pathname.startsWith(`${item?.route}`);
+                      const activeLink = (mobileLinks.indexOf(item) % 2 === 0);
+
+                      console.log(activeLink);
 
                       return(
-                        <SheetClose key={item?.route}>
-                          <Link
-                            href={item?.route}
-                            key={item.label}
-                            className={cn("mobile-menu-sheet-link", {"bg-black": activePage})}
-                          >
-                            <p className={cn("mobile-menu-sheet-link-label", {"text-white": activePage})}>{item?.label}</p>
-                          </Link>
-                        </SheetClose>
+                        <section>
+                          {/* Active Link */}
+                          {
+                            activeLink && (
+                              <SheetClose className="mobile-menu-sheet-link-container" key={index}>
+                                <Link
+                                  href={item?.route}
+                                  className={cn("mobile-menu-sheet-link-active", {"bg-black": activePage})}
+                                >
+                                  <p className={cn("mobile-menu-sheet-link-label", {"text-white": activePage})}>{item?.label}</p>
+                                </Link>
+                              </SheetClose>
+                            )
+                          }
+
+                          {/* Inactive Link */}
+                          {
+                            !activeLink && (
+                                <div
+                                  className={cn("mobile-menu-sheet-link-inactive", {"bg-black": activePage})}
+                                >
+                                  <p className={cn("mobile-menu-sheet-link-label", {"text-white": activePage})}>{item?.label}</p>
+                                </div>
+                            )
+                          }
+                        </section>
                       );
                     })
                   }

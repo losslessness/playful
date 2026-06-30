@@ -1,3 +1,7 @@
+declare interface DeviceProps {
+  device: "Desktop" | "Mobile";
+}
+
 declare interface Logo {
   image: StaticImageData;
   title: string;
@@ -38,13 +42,17 @@ declare interface Product {
   image: StaticImageData[];
   brand: string;
   model: string;
+  description: string;
   color: string;
+  options: string[];
+  rating: number;
   price: number;
   sale: boolean;
   discount: number;
 }
 
 declare interface ProductCardProps {
+  id: number;
   image: StaticImageData;
   brand: string;
   model: string;

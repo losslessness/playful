@@ -1,6 +1,6 @@
-import Categories from "@/components/Categories";
-import Hero from "@/components/Hero";
-import Products from "@/components/Products";
+import Categories from "@/components/CategoriesList";
+import Hero from "@/components/HeroSection";
+import Products from "@/components/ProductsCarousel";
 
 export default function Home() {
   return (

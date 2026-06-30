@@ -1,9 +1,10 @@
 import { Heart, ShoppingCart } from "lucide-react";
 import { saleLabel } from "@/constants/index";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function ProductCard({sale, image, brand, model, price, discount}: ProductCardProps) {
-  const saleValidation = sale && (discount < price) && (discount > 0);
+export default function ProductCard({id, sale, image, brand, model, price, discount}: ProductCardProps) {
+  const saleValidation = sale && (price > 0) && (discount > 0) && (discount < price);
 
   return (
     <main className="product-card">
@@ -15,13 +16,15 @@ export default function ProductCard({sale, image, brand, model, price, discount}
         <button><Heart className="product-card-header-favorite"/></button>
       </div>
       {/* Main */}
-      <Image
-        className="product-card-main-image"
-        src={image}
-        alt={model}
-        height={300}
-        width={300}
-      />
+      <Link href={`/products/${id}`}>
+        <Image
+          className="product-card-main-image"
+          src={image}
+          alt={model}
+          height={300}
+          width={300}
+        />
+      </Link>
       <div>
         <h4 className="product-card-main-title-brand">{brand}</h4>
         <h2 className="product-card-main-title-model">{model}</h2>

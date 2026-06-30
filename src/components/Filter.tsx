@@ -16,8 +16,9 @@ import {
 import { useCallback, useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import { ListFilter } from "lucide-react";
+import { mediaQueryHandler } from "@/lib/utils";
 
-export default function Filter() {
+export default function Filter({device}: DeviceProps) {
   const [chosenCategories, setChosenCategories] = useState([]);
   const onCategoryClick = useCallback((item) => {
     chosenCategories.indexOf(item) === -1 ? setChosenCategories([...chosenCategories, item])
@@ -33,11 +34,11 @@ export default function Filter() {
                                       : setChosenColors(chosenColors?.filter((color) => color !== item));
   }, [chosenColors, setChosenColors]);
 
-  const filters = [...chosenCategories, range, ...chosenColors];
+  const filters = [chosenCategories, range, chosenColors];
 
   return (
     <section>
-      <div className="filter">
+      <div className={device === "Desktop" ? "filter" : "filter-mobile"}>
         <div className="filter-header">
           <h4 className="filter-header-title">{filterTitle}</h4>
           <ListFilter size={20} />

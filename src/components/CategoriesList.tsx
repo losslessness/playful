@@ -1,11 +1,11 @@
-import { categoriesTitle, categories } from "@/constants/index";
+import { categoriesListTitle, categories } from "@/constants/index";
 import CategoryCard from "@/components/common/CategoryCard";
 
-export default function Categories() {
+export default function CategoriesList() {
   return (
     <section>
       <div className="categories">
-        <h1 className="categories-title">{categoriesTitle}</h1>
+        <h1 className="categories-title">{categoriesListTitle}</h1>
         <div className="categories-list">
           {
             categories.map((item) => {

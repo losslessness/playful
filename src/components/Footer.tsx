@@ -19,7 +19,7 @@ export default function Footer() {
   const date = new Date();
 
   return (
-    <main className="footer">
+    <div className="footer">
       <div className="footer-content">
         <div className="footer-content-branding">
           <div className="footer-content-branding-logo">
@@ -71,9 +71,9 @@ export default function Footer() {
           <FooterList title={supportTitle} links={supportLinks} />
         </div>
       </div>
-      <div className="copyright">
-        <p className="copyright-text">&copy; {date.getFullYear()} {copyrightText}</p>
+      <div className="footer-copyright">
+        <p className="footer-copyright-text">&copy; {date.getFullYear()} {copyrightText}</p>
       </div>
-    </main>
+    </div>
   );
 }
