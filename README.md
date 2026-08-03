@@ -26,30 +26,30 @@ Once finished, it will offer a complete online shopping experience, offering fea
 
 ### Frontend
 
-- [] Missing Pages
-- [] Filter Functionality
-- [] Color Selection
-- [] User Authentication
-- [] Cart Functionality
-- [] Checkout Proccess
+- [ ] Missing Pages
+- [ ] Filter Functionality
+- [ ] Color Selection
+- [ ] User Authentication
+- [ ] Cart Functionality
+- [ ] Checkout Proccess
 
 ### Backend
 
-- [] Set Up Spring Boot
-- [] Implement Product API
-- [] User Authentication
-- [] Order Processing
-- [] Payment Integration
-- [] Admin Dashboard
+- [X] Set Up Spring Boot
+- [ ] Implement Product API
+- [ ] User Authentication
+- [ ] Order Processing
+- [ ] Payment Integration
+- [ ] Admin Dashboard
 
 ### Database
 
-- [] Create PostgreSQL Schema
-- [] Set Up Entity Relationships
-- [] Seed Database With Data
+- [ ] Create PostgreSQL Schema
+- [ ] Set Up Entity Relationships
+- [ ] Seed Database With Data
 
 ### Other
 
-- [] API Documentation
-- [] Set Up Testing
-- [] Apply CI/CD
+- [ ] API Documentation
+- [ ] Set Up Testing
+- [ ] Apply CI/CD
