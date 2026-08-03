@@ -1,4 +1,6 @@
+com/losslessness/playful/entities/Category.class
 com/losslessness/playful/controllers/ProductController.class
-com/losslessness/playful/entities/Product.class
 com/losslessness/playful/PlayfulApplication.class
 com/losslessness/playful/dto/ProductDTO.class
+com/losslessness/playful/entities/Product.class
+com/losslessness/playful/entities/Variant.class

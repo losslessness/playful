@@ -1,4 +1,6 @@
-/Users/Utilizador/Desktop/backend/src/main/java/com/losslessness/playful/PlayfulApplication.java
-/Users/Utilizador/Desktop/backend/src/main/java/com/losslessness/playful/controllers/ProductController.java
-/Users/Utilizador/Desktop/backend/src/main/java/com/losslessness/playful/dto/ProductDTO.java
-/Users/Utilizador/Desktop/backend/src/main/java/com/losslessness/playful/entities/Product.java
+/Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/PlayfulApplication.java
+/Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/controllers/ProductController.java
+/Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/dto/ProductDTO.java
+/Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/entities/Category.java
+/Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/entities/Product.java
+/Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/entities/Variant.java

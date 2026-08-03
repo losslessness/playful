@@ -17,7 +17,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class Product {
-    @Column
+    @Id
     @GeneratedValue
     private UUID id;
 
