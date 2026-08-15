@@ -18,9 +18,10 @@ Once finished, it will offer a complete online shopping experience, offering fea
 
 - **Frontend**: Next.js, TailwindCSS, ShadCN, TypeScript
 - **Backend**: Spring Boot
-- **Database**: PostgreSQL
+- **Database**: PostgreSQL, Neon
 - **Authentication**: JWT
 - **Payment**: Stripe
+- **Miscellaneous**: Postman, Swagger, Vercel
 
 ## <a name="to-do-list">To Do List</a>
 
@@ -31,7 +32,7 @@ Once finished, it will offer a complete online shopping experience, offering fea
 - [ ] Color Selection
 - [ ] User Authentication
 - [ ] Cart Functionality
-- [ ] Checkout Proccess
+- [ ] Checkout Process
 
 ### Backend
 
@@ -44,8 +45,8 @@ Once finished, it will offer a complete online shopping experience, offering fea
 
 ### Database
 
-- [ ] Create PostgreSQL Schema
-- [ ] Set Up Entity Relationships
+- [X] Create PostgreSQL Schema
+- [X] Set Up Entity Relationships
 - [ ] Seed Database With Data
 
 ### Other

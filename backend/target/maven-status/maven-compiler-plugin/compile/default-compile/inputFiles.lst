@@ -1,6 +1,11 @@
 /Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/PlayfulApplication.java
+/Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/config/SwaggerConfig.java
 /Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/controllers/ProductController.java
 /Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/dto/ProductDTO.java
 /Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/entities/Category.java
 /Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/entities/Product.java
+/Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/entities/Resource.java
 /Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/entities/Variant.java
+/Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/repositories/ProductRepository.java
+/Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/services/ProductService.java
+/Users/Utilizador/Desktop/playful/backend/src/main/java/com/losslessness/playful/services/ProductServiceImpl.java
