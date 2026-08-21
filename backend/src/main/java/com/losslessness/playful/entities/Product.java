@@ -28,7 +28,7 @@ public class Product {
     private java.time.Instant updatedAt;
 
     @Column(nullable = false)
-    private boolean isNewArrival;
+    private Boolean isNewArrival;
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
@@ -47,10 +47,10 @@ public class Product {
     private BigDecimal price;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private List<ProductVariant> variants;
+    private List<Variant> variants;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private List<ProductResource> resources;
+    private List<Resource> resources;
 
     @PrePersist
     protected void onCreate() {

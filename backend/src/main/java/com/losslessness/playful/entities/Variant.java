@@ -9,12 +9,12 @@ import lombok.NoArgsConstructor;
 import java.util.UUID;
 
 @Entity
-@Table(name = "variants")
+@Table(name = "productVariants")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProductVariant {
+public class Variant {
     @Id
     @GeneratedValue
     private UUID id;

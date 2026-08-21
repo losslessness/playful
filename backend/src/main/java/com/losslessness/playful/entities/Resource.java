@@ -9,15 +9,18 @@ import lombok.NoArgsConstructor;
 import java.util.UUID;
 
 @Entity
-@Table(name = "resources")
+@Table(name = "productResources")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProductResource {
+public class Resource {
     @Id
     @GeneratedValue
     private UUID id;
+
+    @Column(nullable = false)
+    private String type;
 
     @Column(nullable = false)
     private String name;
@@ -27,9 +30,6 @@ public class ProductResource {
 
     @Column(nullable = false)
     private Boolean isPrimary;
-
-    @Column(nullable = false)
-    private String type;
 
     @ManyToOne
     @JoinColumn(name = "product_id",  nullable = false)
