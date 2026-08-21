@@ -6,7 +6,7 @@ import com.losslessness.playful.entities.Product;
 import java.util.List;
 
 public interface ProductService {
-    private Product addProduct(ProductDTO productDTO) {
+    default Product addProduct(ProductDTO productDTO) {
         Product product = new Product();
 
         product.setIsNewArrival(productDTO.getIsNewArrival());
